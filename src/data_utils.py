@@ -27,7 +27,8 @@ def load_and_preprocess_data(config):
     # Lấy dữ liệu từ 200 bệnh nhân, bắt đầu từ bệnh nhân thứ 500
     for i in range(200):
         try:
-            img = nib.load(nii_paths[i + 500][0])
+            path = config.DATA_PATH + nii_paths[i + 500][0]
+            img = nib.load(path)
             data = img.get_fdata()
             # Lấy các lát cắt từ 40 đến 90
             for j in range(40, 90):
