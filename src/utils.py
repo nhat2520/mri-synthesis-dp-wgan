@@ -54,3 +54,6 @@ def add_dp_noise_to_gradients(model, noise_multiplier, max_grad_norm):
                     device=param.grad.device
                 )
                 param.grad.add_(noise)
+
+
+                
