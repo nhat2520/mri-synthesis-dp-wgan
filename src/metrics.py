@@ -43,7 +43,7 @@ def calculate_metrics(generator, dataloader, device, z_dim, num_batches=50):
     fid_metric = FrechetInceptionDistance(feature=64).to(device)
 
     with torch.no_grad():
-        for i, (real_imgs, _) in tqdm(enumerate(dataloader), total=num_batches, desc="Calculating Metrics"):
+        for i, (real_imgs,) in tqdm(enumerate(dataloader), total=num_batches, desc="Calculating Metrics"):
             if i >= num_batches:
                 break
 
